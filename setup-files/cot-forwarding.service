@@ -1,0 +1,18 @@
+[Unit]
+Description=CoT UDP-to-TLS Forwarder for TAK
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/socat -d -u \
+  UDP4-RECV:6969,ip-add-membership="239.2.3.1:eth0",reuseaddr \
+  OPENSSL:cloudtak.mchmr.us:8089,snihost=cloudtak.mchmr.us,cert=/etc/tak/certs/Battle_Lab_Airboss.pem,key=/etc/tak/certs/Battle_Lab_Airboss.key.dec,verify=0
+StandardOutput=journal
+StandardError=journal
+Restart=on-failure
+RestartSec=5s
+User=root
+
+[Install]
+WantedBy=multi-user.target

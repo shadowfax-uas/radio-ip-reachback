@@ -1,0 +1,20 @@
+network:
+  version: 2
+  ethernets:
+    NM-04f79be5-a932-43df-89c5-1ae0851d6cca:
+      renderer: NetworkManager
+      match:
+        name: "eth0"
+      addresses:
+      - "10.221.0.1/16"
+      dhcp6: true
+      wakeonlan: true
+      networkmanager:
+        uuid: "04f79be5-a932-43df-89c5-1ae0851d6cca"
+        name: "Profile 1"
+        passthrough:
+          connection.timestamp: "1779581742"
+          ethernet._: ""
+          ipv6.addr-gen-mode: "default"
+          ipv6.ip6-privacy: "-1"
+          proxy._: ""

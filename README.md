@@ -34,9 +34,9 @@ This package is designed to prepare an Ubuntu-based Raspberry Pi for a TAK/CoT f
 1. Copy or unzip the entire package onto the Raspberry Pi.
 2. From the package root, run:
 
-```bash
-sudo bash setup.sh
-```
+   ```bash
+   sudo bash setup.sh
+   ```
 
 3. When prompted, enter the ZeroTier Network ID for the Pi to join.
 4. The script will reboot the Pi after installation completes.

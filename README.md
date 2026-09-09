@@ -35,11 +35,17 @@ This package is designed to prepare an Ubuntu-based Raspberry Pi for a TAK/CoT f
 2. From the package root, run:
 
    ```bash
-   sudo bash setup.sh
+   sudo bash setup.sh <tail_number>
    ```
 
 3. When prompted, enter the ZeroTier Network ID for the Pi to join.
 4. The script will reboot the Pi after installation completes.
+5. *OPTIONAL - ONLY RUN ON A NEW ZEROTIER NETWORK* Set network MTU size to 1300
+  *This step must be run on the network from a separate node (not on the Pi)*
+
+    ```bash
+    curl -X POST -H "Authorization: token ${TOKEN}" -d '{"config": {"mtu": 1300}}' "https://my.zerotier.com/api/v1/network/${NETWORK_ID}"
+    ```
 
 ## Requirements
 

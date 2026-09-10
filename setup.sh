@@ -1,4 +1,3 @@
-```bash
 #!/bin/bash
 exec 2>> pi-setup.log
 
@@ -68,6 +67,10 @@ COMPASS_GROUP="AFCENT"
 echo ""
 echo "Configure COMPASS video stream"
 echo "------------------------------"
+
+####################################
+# Script hangs up right here. TODO: find out why
+####################################
 
 while true; do
     read -p "Enter aircraft tail number: " AIRCRAFT_TAIL
@@ -201,4 +204,3 @@ echo ""
 echo "The system will now reboot."
 
 sudo reboot
-```
